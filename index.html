@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="juicyads-site-verification" content="4268eccfd78ca2df9255a3e9a9ba75b1">
+    <!-- Improved SEO Meta Tags -->
+    <title>ViralXHub - বাংলা প্রাপ্তবয়স্ক গল্প ও সেক্স স্টোরি কালেকশন</title>
+    <meta name="description" content="ViralXHub - বাংলা প্রাপ্তবয়স্ক গল্প, সেক্স স্টোরি, রোমান্টিক গল্প, বাংলা সেক্স কাহিনী, হট স্টোরি কালেকশন। নিয়মিত নতুন গল্প আপডেট।">
+    <meta name="keywords" content="বাংলা গল্প, প্রাপ্তবয়স্ক গল্প, সেক্স স্টোরি, বাংলা সেক্স গল্প, রোমান্টিক গল্প, হট স্টোরি, adult story, bangla sex story, romantic story, hot story, বাংলা কাহিনী, গল্প সংগ্রহ">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="ViralXHub">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="ViralXHub - বাংলা প্রাপ্তবয়স্ক গল্প ও সেক্স স্টোরি কালেকশন">
+    <meta property="og:description" content="বাংলা প্রাপ্তবয়স্ক গল্প, সেক্স স্টোরি, রোমান্টিক গল্প, বাংলা সেক্স কাহিনী, হট স্টোরি কালেকশন">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viralx-hub.netlify.app/">
+    <meta property="og:image" content="https://viralxhub.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ViralXHub - বাংলা প্রাপ্তবয়স্ক গল্প সংগ্রহ">
+    <meta name="twitter:description" content="বাংলা সেক্স স্টোরি, রোমান্টিক গল্প, প্রাপ্তবয়স্ক কাহিনী সংগ্রহ">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://viralx-hub.netlify.app/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "ViralXHub",
+        "url": "https://viralx-hub.netlify.app/",
+        "description": "বাংলা প্রাপ্তবয়স্ক গল্প, সেক্স স্টোরি, রোমান্টিক গল্প, বাংলা সেক্স কাহিনী, হট স্টোরি কালেকশন",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://viralx-hub.netlify.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ViralXHub",
+            "description": "বাংলা প্রাপ্তবয়স্ক গল্প ও সেক্স স্টোরি কালেকশন"
+        },
+        "genre": ["Adult Stories", "Bangla Stories", "Romantic Stories", "Sex Stories"]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            color: #e6e6e6;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #16213e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Menu Button Section */
+        .menu-button-section {
+            text-align: center;
+            padding: 1rem;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+        }
+
+        .menu-btn:hover {
+            background: #e94560;
+            transform: translateY(-2px);
+        }
+
+        .menu-btn i {
+            margin-right: 0.5rem;
+        }
+
+        /* Sidebar Menu */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background: linear-gradient(to bottom, #16213e, #0f3460);
+            z-index: 2000;
+            transition: left 0.3s ease;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar-menu.open {
+            left: 0;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+            display: none;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: bold;
+        }
+
+        .close-menu {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-menu:hover {
+            color: #e94560;
+            transform: scale(1.2);
+        }
+
+        .sidebar-nav {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-nav-item {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar-nav-item:hover, .sidebar-nav-item.active {
+            background: #e94560;
+            transform: translateX(5px);
+        }
+
+        .sidebar-nav-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-about {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .sidebar-about h3 {
+            color: #e94560;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-about p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #ccc;
+        }
+
+        /* Page Title Section with H1 */
+        .page-title-section {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(135deg, rgba(16, 36, 71, 0.8), rgba(32, 58, 107, 0.8)),
+                        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjMzLCA2OSwgOTYsIDAuMDgpIiBzdHJva2Utd2lkdGg9IjEiPjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgLz48L2c+PC9zdmc+');
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-title-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Secret Admin Area in Title Section */
+        .secret-admin-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            background: transparent;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        /* Banner Ad Styles */
+        .banner-ad {
+            width: 100%;
+            padding: 1rem;
+            background-color: #0f3460;
+            margin: 1.5rem 0;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #e94560;
+        }
+
+        .banner-ad img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .ad-label {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Stories Section Styles */
+        .stories-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem;
+            border-bottom: 2px solid #e94560;
+            display: inline-block;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .story-card {
+            background: linear-gradient(145deg, #16213e, #1a1a2e);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #0f3460;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .story-title {
+            color: #e94560;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .story-summary {
+            color: #b8b8b8;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .story-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .story-category {
+            background: #0f3460;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .story-date {
+            color: #aaa;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .read-more-btn:hover {
+            background: #ff6b8b;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .page-btn {
+            padding: 0.7rem 1.2rem;
+            background: #0f3460;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: #e94560;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-numbers {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .page-number {
+            padding: 0.7rem 1rem;
+            background: #16213e;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .page-number.active {
+            background: #e94560;
+        }
+
+        .page-number:hover {
+            background: #0f3460;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #16213e;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background-color: #e94560;
+        }
+
+        .social-icons {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #e94560;
+        }
+
+        .footer-info {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #16213e;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 95%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 2001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            background: rgba(233, 69, 96, 0.7);
+        }
+
+        /* Loading Spinner */
+        .loader {
+            display: none;
+            border: 5px solid #333;
+            border-top: 5px solid #e94560;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 3000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #0f3460;
+            border: 1px solid #1a1a2e;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #e94560;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .login-btn:hover {
+            background-color: #ff6b8b;
+        }
+
+        /* Story Submission Notice */
+        .submission-notice {
+            background-color: #0f3460;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #e94560;
+        }
+
+        .submission-notice h3 {
+            color: #e94560;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .submission-notice p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Word Counter */
+        .word-counter {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 0.5rem;
+        }
+
+        .word-counter.limit-reached {
+            color: #e94560;
+            font-weight: bold;
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            background-color: #16213e;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .success-message i {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .success-message h2 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .menu-button-section {
+                flex-direction: row;
+                gap: 0.5rem;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 1rem 0.5rem;
+            }
+            
+            .menu-btn {
+                padding: 0.7rem 1rem;
+                font-size: 0.9rem;
+                flex-shrink: 0;
+            }
+            
+            .stories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1rem;
+            }
+            
+            .modal-content {
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-links a {
+                margin: 0.3rem 0;
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+            }
+
+            .sidebar-menu {
+                width: 280px;
+                left: -280px;
+            }
+
+            .secret-admin-area {
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 1.3rem;
+            }
+            
+            .menu-button-section {
+                gap: 0.3rem;
+            }
+            
+            .menu-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .page-numbers {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .sidebar-menu {
+                width: 250px;
+                left: -250px;
+            }
+
+            .success-message i {
+                font-size: 3rem;
+            }
+
+            .success-message h2 {
+                font-size: 1.3rem;
+            }
+
+            .secret-admin-area {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Success Notification -->
+    <div class="notification" id="notification">Operation successful!</div>
+
+    <!-- Page Title Section with H1 -->
+    <div class="page-title-section">
+        <h1 class="page-title" itemprop="headline">ViralXHub - বাংলা প্রাপ্তবয়স্ক গল্প সংগ্রহ</h1>
+        <!-- Secret Admin Area in Title Section -->
+        <div class="secret-admin-area" id="secret-admin-area"></div>
+    </div>
+
+    <!-- Menu Button Section -->
+    <div class="menu-button-section">
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i> মেনু
+        </button>
+        <a href="sex-video.html" class="menu-btn">
+            <i class="fas fa-video"></i> সেক্স ভিডিও
+        </a>
+        <a href="stories.html" class="menu-btn">
+            <i class="fas fa-book"></i> সেক্স স্টোরি
+        </a>
+        <button class="menu-btn" id="upload-story-btn-top">
+            <i class="fas fa-upload"></i> গল্প আপলোড
+        </button>
+        <a href="admin-stories.html" class="menu-btn" style="background: #e94560;">
+            <i class="fas fa-cog"></i> অ্যাডমিন
+        </a>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="sidebar-title">ViralXHub মেনু</div>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-nav-item active">
+                <i class="fas fa-home"></i> হোম
+            </a>
+            <a href="stories.html" class="sidebar-nav-item">
+                <i class="fas fa-book"></i> গল্প সংগ্রহ
+            </a>
+            <a href="sex-video.html" class="sidebar-nav-item">
+                <i class="fas fa-video"></i> সেক্স ভিডিও
+            </a>
+            <a href="admin-stories.html" class="sidebar-nav-item">
+                <i class="fas fa-cog"></i> অ্যাডমিন প্যানেল
+            </a>
+            <a href="about.html" class="sidebar-nav-item">
+                <i class="fas fa-info-circle"></i> আমাদের সম্পর্কে
+            </a>
+            <a href="contact.html" class="sidebar-nav-item">
+                <i class="fas fa-envelope"></i> যোগাযোগ
+            </a>
+            <a href="privacy-policy.html" class="sidebar-nav-item">
+                <i class="fas fa-shield-alt"></i> গোপনীয়তা নীতি
+            </a>
+        </nav>
+        
+        <div class="sidebar-about">
+            <h3>ViralXHub সম্পর্কে</h3>
+            <p>ViralXHub হল বাংলা প্রাপ্তবয়স্ক গল্প এবং সেক্স স্টোরির একটি বিশাল সংগ্রহশালা। এখানে আপনি পাবেন রোমান্টিক, কলেজ, ফ্যামিলি, ফ্যান্টাসি সহ বিভিন্ন ধরনের প্রাপ্তবয়স্ক গল্প। আমাদের লক্ষ্য পাঠকদের জন্য মানসম্মত এবং আকর্ষণীয় কনটেন্ট সরবরাহ করা।</p>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Stories Section -->
+    <div class="stories-section">
+        <h2 class="section-heading">নতুন গল্পসমূহ</h2>
+        <div class="stories-grid" id="stories-grid">
+            <!-- Stories will be loaded here with ads -->
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <button class="page-btn" id="prev-page">← পূর্বের</button>
+            <div class="page-numbers" id="page-numbers"></div>
+            <button class="page-btn" id="next-page">পরের →</button>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Final Ad Banner -->
+    <div class="banner-ad">
+        <div class="ad-label">বিজ্ঞাপন</div>
+        <img src="https://via.placeholder.com/728x90/0f3460/e94560?text=ViralXHub+Premium+Stories" alt="ViralXHub Premium Stories Advertisement" title="ViralXHub Premium Stories">
+    </div>
+
+    <!-- Footer -->
+    <footer itemprop="footer">
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">হোম</a>
+            <a href="stories.html">গল্প সংগ্রহ</a>
+            <a href="sex-video.html">সেক্স ভিডিও</a>
+            <a href="admin-stories.html">অ্যাডমিন</a>
+            <a href="about.html">আমাদের সম্পর্কে</a>
+            <a href="contact.html">যোগাযোগ</a>
+            <a href="privacy-policy.html">গোপনীয়তা নীতি</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2024 ViralX Hub. সর্বস্বত্ব সংরক্ষিত। ডিসক্লেইমার: এই ওয়েবসাইটে প্রদর্শিত গল্পসমূহ বিভিন্ন উন্মুক্ত উৎস থেকে সংগ্রহ করা হয়েছে। ViralX Hub প্রদর্শিত কনটেন্টের মালিকানা দাবি করে না। যদি কোন উপাদান কপিরাইট লঙ্ঘন করে, অনুগ্রহ করে viralxhub.temp@gmail.com এ আমাদের সাথে যোগাযোগ করুন</p>
+        </div>
+        <div class="copyright">
+            <p>ViralXHub - বাংলা প্রাপ্তবয়স্ক গল্প ও সেক্স স্টোরির জন্য আপনার গন্তব্য</p>
+        </div>
+    </footer>
+
+    <!-- Visitor Story Submission Modal -->
+    <div class="modal" id="visitor-story-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-visitor-story" aria-label="Close Visitor Story Modal">&times;</button>
+            <h2>আপনার গল্প জমা দিন</h2>
+            
+            <div class="submission-notice">
+                <h3><i class="fas fa-exclamation-circle"></i> গুরুত্বপূর্ণ নোটিশ</h3>
+                <p>দয়া করে শুধুমাত্র নিজের মূল গল্প সাবমিট করুন। কোন কপিরাইট কন্টেন্ট আপলোড করবেন না। সর্বোচ্চ ৩০০০ শব্দের গল্প জমা দিতে পারবেন।</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="visitor-story-title">স্টোরির শিরোনাম *</label>
+                <input type="text" id="visitor-story-title" placeholder="স্টোরির শিরোনাম লিখুন">
+            </div>
+            <div class="form-group">
+                <label for="visitor-story-summary">সংক্ষিপ্ত বিবরণ (২-৩ লাইন) *</label>
+                <textarea id="visitor-story-summary" placeholder="সংক্ষিপ্ত বিবরণ লিখুন" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="visitor-story-content">পুরো গল্প *</label>
+                <textarea id="visitor-story-content" placeholder="পুরো গল্প লিখুন" rows="10"></textarea>
+                <div class="word-counter" id="word-counter">0/3000 শব্দ</div>
+            </div>
+            <div class="form-group">
+                <label for="visitor-story-category">বিভাগ</label>
+                <select id="visitor-story-category">
+                    <option value="romantic-story">রোমান্টিক গল্প</option>
+                    <option value="bengali-sex-story">বাংলা সেক্স গল্প</option>
+                    <option value="indian-sex-story">ইন্ডিয়ান সেক্স গল্প</option>
+                    <option value="college-sex-story">কলেজ সেক্স গল্প</option>
+                    <option value="fantasy-sex-story">কাল্পনিক সেক্স গল্প</option>
+                    <option value="family-sex-story">ফ্যামিলি সেক্স গল্প</option>
+                </select>
+            </div>
+            <button class="login-btn" id="submit-visitor-story-btn">গল্প জমা দিন</button>
+        </div>
+    </div>
+
+    <!-- Story Submission Success Modal -->
+    <div class="modal" id="submission-success-modal">
+        <div class="modal-content">
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h2>আপনার গল্প সফলভাবে জমা হয়েছে!</h2>
+                <p>আপনার গল্পটি এখন রিভিউ প্রক্রিয়ায় রয়েছে। অ্যাডমিন রিভিউ করার পর এটি পাবলিশ করা হবে। ধন্যবাদ আপনার অরিজিনাল গল্প শেয়ারের জন্য।</p>
+                <button class="login-btn" id="close-success-modal">ঠিক আছে</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Supabase initialization
+            const supabaseUrl = 'https://omuesiigvfcyblpgqkco.supabase.co';
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tdWVzaWlndmZjeWJscGdxa2NvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0NDc2MjAsImV4cCI6MjA3MzAyMzYyMH0.gQpgqK71DpNVPZfl7RR-1W0LAEvaM5zvSre7HqsN2qQ';
+
+            const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+            // DOM Elements
+            const storiesGrid = document.getElementById('stories-grid');
+            const visitorStoryModal = document.getElementById('visitor-story-modal');
+            const submissionSuccessModal = document.getElementById('submission-success-modal');
+            const closeVisitorStory = document.getElementById('close-visitor-story');
+            const closeSuccessModal = document.getElementById('close-success-modal');
+            const submitVisitorStoryBtn = document.getElementById('submit-visitor-story-btn');
+            const loader = document.getElementById('loader');
+            const notification = document.getElementById('notification');
+            const prevPageBtn = document.getElementById('prev-page');
+            const nextPageBtn = document.getElementById('next-page');
+            const pageNumbers = document.getElementById('page-numbers');
+            const wordCounter = document.getElementById('word-counter');
+            const visitorStoryContent = document.getElementById('visitor-story-content');
+            
+            // Menu Elements
+            const menuBtn = document.getElementById('menu-btn');
+            const uploadStoryBtnTop = document.getElementById('upload-story-btn-top');
+            const sidebarMenu = document.getElementById('sidebar-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
+            
+            // Secret Admin Area
+            const secretAdminArea = document.getElementById('secret-admin-area');
+            
+            // Variables
+            let allStories = [];
+            let currentStoryPage = 1;
+            const storiesPerPage = 6;
+            const storiesPerAd = 5; // Show ad after every 5 stories
+            let adminClickCount = 0;
+            let adminClickTimeout;
+
+            // Secret Admin Area Functionality
+            function setupSecretAdminArea() {
+                secretAdminArea.addEventListener('click', () => {
+                    adminClickCount++;
+                    
+                    // Reset counter after 2 seconds
+                    clearTimeout(adminClickTimeout);
+                    adminClickTimeout = setTimeout(() => {
+                        adminClickCount = 0;
+                    }, 2000);
+                    
+                    // If clicked 3 times, redirect directly to admin panel
+                    if (adminClickCount >= 3) {
+                        adminClickCount = 0;
+                        window.location.href = 'admin-stories.html';
+                    }
+                });
+            }
+
+            // Menu functionality
+            function openMenu() {
+                sidebarMenu.classList.add('open');
+                sidebarOverlay.classList.add('active');
+                document.body.classList.add('menu-open');
+            }
+
+            function closeMenuFunc() {
+                sidebarMenu.classList.remove('open');
+                sidebarOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+
+            menuBtn.addEventListener('click', openMenu);
+            closeMenu.addEventListener('click', closeMenuFunc);
+            sidebarOverlay.addEventListener('click', closeMenuFunc);
+
+            // Upload story button functionality
+            uploadStoryBtnTop.addEventListener('click', () => {
+                visitorStoryModal.style.display = 'block';
+            });
+
+            // Activate current menu item
+            function activateCurrentMenuItem() {
+                sidebarNavItems.forEach(item => {
+                    item.classList.remove('active');
+                    
+                    const href = item.getAttribute('href');
+                    const currentFile = window.location.pathname.split('/').pop();
+                    
+                    if (href === currentFile || (currentFile === '' && href === 'index.html')) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+
+            // Show notification function
+            function showNotification(message) {
+                notification.textContent = message;
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+
+            // Word counter for visitor story submission
+            visitorStoryContent.addEventListener('input', () => {
+                const text = visitorStoryContent.value;
+                const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+                
+                wordCounter.textContent = `${words}/3000 শব্দ`;
+                
+                if (words > 3000) {
+                    wordCounter.classList.add('limit-reached');
+                    submitVisitorStoryBtn.disabled = true;
+                } else {
+                    wordCounter.classList.remove('limit-reached');
+                    submitVisitorStoryBtn.disabled = false;
+                }
+            });
+
+            // Create ad banner element
+            function createAdBanner(adIndex) {
+                const adBanner = document.createElement('div');
+                adBanner.className = 'banner-ad';
+                adBanner.innerHTML = `
+                    <div class="ad-label">বিজ্ঞাপন</div>
+                    <img src="https://via.placeholder.com/728x90/0f3460/e94560?text=ViralXHub+Ad+${adIndex + 1}" alt="ViralXHub Advertisement ${adIndex + 1}" title="ViralXHub Advertisement">
+                `;
+                return adBanner;
+            }
+
+            // Load stories from Supabase (only published ones)
+            async function loadStories(page = 1) {
+                showLoader();
+                
+                const from = (page - 1) * storiesPerPage;
+                const to = from + storiesPerPage - 1;
+                
+                const { data, error, count } = await supabase
+                    .from('stories')
+                    .select('*', { count: 'exact' })
+                    .eq('status', 'published')
+                    .order('created_at', { ascending: false })
+                    .range(from, to);
+                
+                hideLoader();
+                
+                if (error) {
+                    console.error('Error loading stories:', error);
+                    storiesGrid.innerHTML = '<p class="no-stories">গল্প লোড করতে সমস্যা হয়েছে</p>';
+                } else {
+                    allStories = data || [];
+                    
+                    if (allStories.length === 0) {
+                        storiesGrid.innerHTML = '<p class="no-stories">কোন গল্প পাওয়া যায়নি</p>';
+                    } else {
+                        displayStoriesWithAds(allStories);
+                        setupPagination(count, page);
+                    }
+                }
+            }
+
+            // Display stories with ads after every 5 stories
+            function displayStoriesWithAds(stories) {
+                storiesGrid.innerHTML = '';
+                
+                stories.forEach((story, index) => {
+                    const storyCard = document.createElement('div');
+                    storyCard.className = 'story-card';
+                    storyCard.innerHTML = `
+                        <h3 class="story-title">${escapeHtml(story.title)}</h3>
+                        <p class="story-summary">${escapeHtml(story.summary)}</p>
+                        <div class="story-meta">
+                            <span class="story-category">${getCategoryDisplayName(story.category)}</span>
+                            <span class="story-date">${new Date(story.created_at).toLocaleDateString('bn-BD')}</span>
+                        </div>
+                        <a href="story-details.html?id=${story.id}&slug=${story.slug}" class="read-more-btn">পুরো গল্প পড়ুন</a>
+                    `;
+                    
+                    storiesGrid.appendChild(storyCard);
+                    
+                    // Add ad banner after every 5 stories
+                    if ((index + 1) % storiesPerAd === 0 && (index + 1) < stories.length) {
+                        const adIndex = Math.floor(index / storiesPerAd);
+                        const adBanner = createAdBanner(adIndex);
+                        storiesGrid.appendChild(adBanner);
+                    }
+                });
+            }
+
+            // Escape HTML to prevent XSS
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Get category display name
+            function getCategoryDisplayName(category) {
+                const categoryMap = {
+                    'romantic-story': 'রোমান্টিক গল্প',
+                    'bengali-sex-story': 'বাংলা সেক্স গল্প',
+                    'indian-sex-story': 'ইন্ডিয়ান সেক্স গল্প',
+                    'college-sex-story': 'কলেজ সেক্স গল্প',
+                    'fantasy-sex-story': 'কাল্পনিক সেক্স গল্প',
+                    'family-sex-story': 'ফ্যামিলি সেক্স গল্প',
+                    'romantic': 'রোমান্টিক',
+                    'horror': 'হরর',
+                    'adventure': 'অ্যাডভেঞ্চার',
+                    'drama': 'ড্রামা',
+                    'mystery': 'মিস্ট্রি'
+                };
+                
+                return categoryMap[category] || category;
+            }
+
+            // Setup pagination
+            function setupPagination(totalStories, currentPage) {
+                const totalPages = Math.ceil(totalStories / storiesPerPage);
+                
+                pageNumbers.innerHTML = '';
+                
+                // Previous button
+                prevPageBtn.disabled = currentPage === 1;
+                
+                // Page numbers (show max 5 pages)
+                const startPage = Math.max(1, currentPage - 2);
+                const endPage = Math.min(totalPages, startPage + 4);
+                
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = `page-number ${i === currentPage ? 'active' : ''}`;
+                    pageBtn.textContent = i;
+                    pageBtn.addEventListener('click', () => {
+                        currentStoryPage = i;
+                        loadStories(i);
+                    });
+                    pageNumbers.appendChild(pageBtn);
+                }
+                
+                // Next button
+                nextPageBtn.disabled = currentPage === totalPages;
+                
+                // Show/hide pagination based on page count
+                if (totalPages <= 1) {
+                    document.getElementById('pagination').style.display = 'none';
+                } else {
+                    document.getElementById('pagination').style.display = 'flex';
+                }
+            }
+
+            // Show loader
+            function showLoader() {
+                loader.style.display = 'block';
+            }
+
+            // Hide loader
+            function hideLoader() {
+                loader.style.display = 'none';
+            }
+
+            // Submit story from visitor (pending status)
+            submitVisitorStoryBtn.addEventListener('click', async () => {
+                const title = document.getElementById('visitor-story-title').value;
+                const summary = document.getElementById('visitor-story-summary').value;
+                const content = document.getElementById('visitor-story-content').value;
+                const category = document.getElementById('visitor-story-category').value;
+                
+                // Word count validation
+                const words = content.trim() === '' ? 0 : content.trim().split(/\s+/).length;
+                if (words > 3000) {
+                    alert('দয়া করে ৩০০০ শব্দের মধ্যে গল্প লিখুন');
+                    return;
+                }
+                
+                if (title && summary && content) {
+                    showLoader();
+                    
+                    const { data, error } = await supabase
+                        .from('stories')
+                        .insert([
+                            {
+                                title: title,
+                                summary: summary,
+                                content: content,
+                                category: category,
+                                status: 'pending',
+                                created_at: new Date().toISOString()
+                            }
+                        ])
+                        .select();
+                    
+                    hideLoader();
+                    
+                    if (error) {
+                        console.error('Error submitting story:', error);
+                        alert('গল্প জমা দিতে সমস্যা: ' + error.message);
+                    } else {
+                        // Clear the form
+                        document.getElementById('visitor-story-title').value = '';
+                        document.getElementById('visitor-story-summary').value = '';
+                        document.getElementById('visitor-story-content').value = '';
+                        visitorStoryModal.style.display = 'none';
+                        submissionSuccessModal.style.display = 'block';
+                        
+                        showNotification('গল্প সফলভাবে জমা হয়েছে! এটি এখন রিভিউ প্রক্রিয়ায় রয়েছে।');
+                    }
+                } else {
+                    alert('দয়া করে সকল প্রয়োজনীয় ফিল্ড পূরণ করুন (শিরোনাম, সংক্ষিপ্ত বিবরণ, পুরো গল্প)');
+                }
+            });
+
+            // Close modals
+            closeVisitorStory.addEventListener('click', () => {
+                visitorStoryModal.style.display = 'none';
+            });
+
+            closeSuccessModal.addEventListener('click', () => {
+                submissionSuccessModal.style.display = 'none';
+            });
+
+            // Pagination event listeners
+            prevPageBtn.addEventListener('click', () => {
+                if (currentStoryPage > 1) {
+                    currentStoryPage--;
+                    loadStories(currentStoryPage);
+                }
+            });
+
+            nextPageBtn.addEventListener('click', () => {
+                currentStoryPage++;
+                loadStories(currentStoryPage);
+            });
+
+            // Close modals when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === visitorStoryModal) {
+                    visitorStoryModal.style.display = 'none';
+                }
+                if (e.target === submissionSuccessModal) {
+                    submissionSuccessModal.style.display = 'none';
+                }
+            });
+
+            // Initial load
+            activateCurrentMenuItem();
+            setupSecretAdminArea();
+            loadStories(currentStoryPage);
+        });
+    </script>
+</body>
+</html>
