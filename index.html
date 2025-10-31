@@ -6,10 +6,17 @@
     <meta name="juicyads-site-verification" content="4268eccfd78ca2df9255a3e9a9ba75b1">
     
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#e94560">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="ViralXHub">
+<meta name="theme-color" content="#e94560">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ViralXHub">
+
+<!-- PWA Icons -->
+<link rel="icon" type="image/x-icon" href="https://i.postimg.cc/9FxtZTfr/file-000000000d2061f58105470ed8bd52a3.jpg">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/9FxtZTfr/file-000000000d2061f58105470ed8bd52a3.jpg">
+
+<!-- Manifest -->
+<link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
     
     <!-- Comprehensive PWA Icons for All Devices -->
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/9FxtZTfr/file-000000000d2061f58105470ed8bd52a3.jpg">
@@ -1567,44 +1574,57 @@
                 }
             });
 
-            // Initialize the page
-            setupSecretAdminArea();
-            loadStories(currentStoryPage);
+                    // Initialize the page
+        setupSecretAdminArea();
+        loadStories(currentStoryPage);
 
-            // PWA Installation Prompt
-            let deferredPrompt;
-            window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                deferredPrompt = e;
-                
-                // Show install prompt after 3 seconds
-                setTimeout(() => {
-                    showNotification('Add ViralXHub to your home screen for better experience!');
-                }, 3000);
-            });
+        // PWA Installation Prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install prompt after 3 seconds
+            setTimeout(() => {
+                showNotification('Add ViralXHub to your home screen for better experience!');
+            }, 3000);
         });
 
-        // Global function for opening story details
-        function openStoryDetails(storyId) {
-            window.location.href = `story-details.html?id=${storyId}`;
+        // PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
         }
+    });
 
-        // Helper function for date formatting
-        function formatDate(dateString) {
-            try {
-                const options = { year: 'numeric', month: 'short', day: 'numeric' };
-                return new Date(dateString).toLocaleDateString('en-US', options);
-            } catch (error) {
-                return 'Unknown date';
-            }
-        }
+    // Global function for opening story details
+    function openStoryDetails(storyId) {
+        window.location.href = `story-details.html?id=${storyId}`;
+    }
 
-        // Helper function for HTML sanitization
-        function sanitizeHTML(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
+    // Helper function for date formatting
+    function formatDate(dateString) {
+        try {
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        } catch (error) {
+            return 'Unknown date';
         }
-    </script>
+    }
+
+    // Helper function for HTML sanitization
+    function sanitizeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+</script>
 </body>
 </html>
