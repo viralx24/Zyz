@@ -1,0 +1,30 @@
+{
+  "name": "ViralXHub - Bangla Sex Story",
+  "short_name": "ViralXHub",
+  "description": "বাংলা সেক্স গল্প, প্রাপ্তবয়স্ক গল্প, সেক্স স্টোরি কালেকশন",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#e94560",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/9FxtZTfr/file-000000000d2061f58105470ed8bd52a3.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.postimg.cc/9FxtZTfr/file-000000000d2061f58105470ed8bd52a3.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.postimg.cc/9FxtZTfr/file-000000000d2061f58105470ed8bd52a3.jpg",
+      "sizes": "180x180",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["entertainment", "social"],
+  "lang": "bn"
+}
