@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /search
+Disallow: /?search=
+
+# Sitemaps
+Sitemap: https://viralx-24.netlify.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Allow social media bots
+User-agent: FacebookBot
+Allow: /
+
+User-agent: TwitterBot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
