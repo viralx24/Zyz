@@ -1,0 +1,63 @@
+[build]
+  publish = "."
+  command = "echo 'No build command needed'"
+
+# Global headers for all files
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Specific headers for HTML files
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "max-age=3600"
+    Content-Type = "text/html; charset=utf-8"
+
+# Headers for sitemap.xml
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "max-age=3600"
+
+# Headers for robots.txt
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Cache-Control = "max-age=3600"
+
+# Headers for CSS files
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css"
+    Cache-Control = "max-age=2592000"
+
+# Headers for JS files
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Cache-Control = "max-age=2592000"
+
+# Headers for images
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "max-age=2592000"
+
+# Redirects (if needed)
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog.html"
+  status = 200
+
+# Environment variables (optional)
+[context.production.environment]
+  NODE_VERSION = "18"
