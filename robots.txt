@@ -1,3 +1,4 @@
+# General rules for all bots
 User-agent: *
 Allow: /
 Disallow: /admin
@@ -8,7 +9,11 @@ Disallow: /?search=
 # Sitemaps
 Sitemap: https://viralx-24.netlify.app/sitemap.xml
 
-# Crawl delay
+# Specific crawl-delay for Bing and Yandex (Google ignores this safely)
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Yandex
 Crawl-delay: 1
 
 # Allow social media bots
