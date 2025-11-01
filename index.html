@@ -63,6 +63,15 @@
     <link rel="alternate" hreflang="en" href="https://viralx-24.netlify.app/">
     <link rel="alternate" hreflang="x-default" href="https://viralx-24.netlify.app/">
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1V6FYG3GFV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1V6FYG3GFV');
+    </script>
+
     <!-- 📄 Structured Data (Enhanced for SEO) -->
     <script type="application/ld+json">
     {
@@ -842,6 +851,44 @@
             100% { opacity: 0.8; }
         }
 
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: #16213e;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search Box */
+        .search-box {
+            max-width: 500px;
+            margin: 1rem auto;
+            padding: 0 2rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 25px;
+            border: 1px solid #0f3460;
+            background: #16213e;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -897,6 +944,14 @@
             .secret-admin-area {
                 width: 80px;
             }
+
+            .breadcrumb {
+                padding: 1rem;
+            }
+
+            .search-box {
+                padding: 0 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -942,8 +997,47 @@
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Schema.org Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://viralx-24.netlify.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Bangla Sex Stories",
+                "item": "https://viralx-24.netlify.app/"
+            }
+        ]
+    }
+    </script>
+
     <!-- Success Notification -->
     <div class="notification" id="notification">Operation successful!</div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span itemscope itemtype="https://schema.org/BreadcrumbList">
+            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="https://viralx-24.netlify.app/" itemprop="item">
+                    <span itemprop="name">Home</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </span>
+            ›
+            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Bangla Sex Stories</span>
+                <meta itemprop="position" content="2" />
+            </span>
+        </span>
+    </nav>
 
     <!-- Page Title Section with H1 -->
     <div class="page-title-section">
@@ -952,18 +1046,23 @@
         <div class="secret-admin-area" id="secret-admin-area"></div>
     </div>
 
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search stories... 🔍" aria-label="Search stories">
+    </div>
+
     <!-- Menu Button Section -->
     <div class="menu-button-section">
         <button class="menu-btn" id="menu-btn">
             <i class="fas fa-bars"></i> Menu
         </button>
-        <a href="sex-video.html" class="menu-btn">
+        <a href="/sex-video.html" class="menu-btn">
             <i class="fas fa-video"></i> Sex Video
         </a>
-        <a href="stories.html" class="menu-btn">
+        <a href="/stories.html" class="menu-btn">
             <i class="fas fa-book"></i> Sex Story
         </a>
-        <a href="sex-tiktok.html" class="menu-btn">
+        <a href="/sex-tiktok.html" class="menu-btn">
             <i class="fab fa-tiktok tiktok-icon"></i> Sex TikTok
         </a>
         <button class="menu-btn" id="upload-story-btn-top">
@@ -981,25 +1080,25 @@
         </div>
         
         <nav class="sidebar-nav">
-            <a href="index.html" class="sidebar-nav-item active">
+            <a href="/index.html" class="sidebar-nav-item active">
                 <i class="fas fa-home"></i> Home
             </a>
-            <a href="stories.html" class="sidebar-nav-item">
+            <a href="/stories.html" class="sidebar-nav-item">
                 <i class="fas fa-book"></i> Story Collection
             </a>
-            <a href="sex-video.html" class="sidebar-nav-item">
+            <a href="/sex-video.html" class="sidebar-nav-item">
                 <i class="fas fa-video"></i> Sex Video
             </a>
-            <a href="sex-tiktok.html" class="sidebar-nav-item">
+            <a href="/sex-tiktok.html" class="sidebar-nav-item">
                 <i class="fab fa-tiktok tiktok-icon"></i> Sex TikTok
             </a>
-            <a href="about.html" class="sidebar-nav-item">
+            <a href="/about.html" class="sidebar-nav-item">
                 <i class="fas fa-info-circle"></i> About Us
             </a>
-            <a href="contact.html" class="sidebar-nav-item">
+            <a href="/contact.html" class="sidebar-nav-item">
                 <i class="fas fa-envelope"></i> Contact
             </a>
-            <a href="privacy-policy.html" class="sidebar-nav-item">
+            <a href="/privacy-policy.html" class="sidebar-nav-item">
                 <i class="fas fa-shield-alt"></i> Privacy Policy
             </a>
         </nav>
@@ -1034,7 +1133,7 @@
     <!-- Final Ad Banner -->
     <div class="banner-ad">
         <div class="ad-label">Advertisement</div>
-        <img src="https://via.placeholder.com/728x90/0f3460/e94560?text=ViralXHub+Premium+Stories" alt="ViralXHub Premium Stories Advertisement" title="ViralXHub Premium Stories">
+        <img src="https://via.placeholder.com/728x90/0f3460/e94560?text=ViralXHub+Premium+Stories" alt="ViralXHub Premium Bengali Adult Stories - Exclusive Content Collection" title="ViralXHub Premium Stories">
     </div>
 
     <!-- Footer -->
@@ -1047,13 +1146,13 @@
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok tiktok-icon"></i></a>
         </div>
         <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="stories.html">Story Collection</a>
-            <a href="sex-video.html">Sex Video</a>
-            <a href="sex-tiktok.html">Sex TikTok</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="/index.html">Home</a>
+            <a href="/stories.html">Story Collection</a>
+            <a href="/sex-video.html">Sex Video</a>
+            <a href="/sex-tiktok.html">Sex TikTok</a>
+            <a href="/about.html">About Us</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
         </div>
         <div class="footer-info">
             <p>© 2024 ViralX Hub. All rights reserved. Disclaimer: The stories displayed on this website are collected from various open sources. ViralX Hub does not claim ownership of the content displayed. If any material infringes copyright, please contact us at viralxhub.temp@gmail.com</p>
@@ -1116,6 +1215,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Track page view in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: 'Bangla Sex Stories Homepage',
+                    page_location: window.location.href
+                });
+            }
+
             // Supabase initialization
             const supabaseUrl = 'https://lvmionmnzjnzgtygjjmq.supabase.co';
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2bWlvbm1uempuemd0eWdqam1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE3NzAxOTgsImV4cCI6MjA3NzM0NjE5OH0.JPPz4H5gmeLukD2YKHo-QxvqZ73G7w170D4uhncdy10';
@@ -1136,6 +1243,7 @@
             const pageNumbers = document.getElementById('page-numbers');
             const wordCounter = document.getElementById('word-counter');
             const visitorStoryContent = document.getElementById('visitor-story-content');
+            const searchInput = document.getElementById('search-input');
             
             // Menu Elements
             const menuBtn = document.getElementById('menu-btn');
@@ -1167,11 +1275,13 @@
                 { id: 'family-sex-story', name: 'Family Stories' }
             ];
 
-            // HTML Sanitization Function
+            // Enhanced HTML Sanitization Function
             function sanitizeHTML(str) {
+                if (!str) return '';
                 const div = document.createElement('div');
                 div.textContent = str;
-                return div.innerHTML;
+                // Remove any remaining HTML tags for extra security
+                return div.innerHTML.replace(/<[^>]*>/g, '');
             }
 
             // Generate random number for views and likes
@@ -1183,7 +1293,14 @@
 
             // Function to open story in details page
             function openStoryDetails(storyId) {
-                window.location.href = `story-details.html?id=${storyId}`;
+                // Track story click in Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'select_content', {
+                        content_type: 'story',
+                        content_id: storyId
+                    });
+                }
+                window.location.href = `/story-details.html?id=${storyId}`;
             }
 
             // Secret Admin Area Functionality
@@ -1198,7 +1315,36 @@
                     
                     if (adminClickCount >= 3) {
                         adminClickCount = 0;
-                        window.location.href = 'admin-stories.html';
+                        window.location.href = '/admin-stories.html';
+                    }
+                });
+            }
+
+            // Search functionality
+            function setupSearch() {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase().trim();
+                    
+                    if (searchTerm.length === 0) {
+                        displayStories(allStories);
+                        return;
+                    }
+                    
+                    if (searchTerm.length < 2) return;
+                    
+                    const filteredStories = allStories.filter(story => 
+                        story.title.toLowerCase().includes(searchTerm) ||
+                        story.content.toLowerCase().includes(searchTerm) ||
+                        story.category.toLowerCase().includes(searchTerm)
+                    );
+                    
+                    displayStories(filteredStories);
+                    
+                    // Track search in Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'search', {
+                            search_term: searchTerm
+                        });
                     }
                 });
             }
@@ -1224,6 +1370,14 @@
             uploadStoryBtnTop.addEventListener('click', () => {
                 closeMenuFunc();
                 visitorStoryModal.style.display = 'block';
+                
+                // Track upload button click
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        event_category: 'engagement',
+                        event_label: 'upload_story_button'
+                    });
+                }
             });
 
             // Word counter for story content
@@ -1274,12 +1428,16 @@
 
             // Format date
             function formatDate(dateString) {
-                const date = new Date(dateString);
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                });
+                try {
+                    const date = new Date(dateString);
+                    return date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                } catch (error) {
+                    return 'Recent';
+                }
             }
 
             // Get total stories count from Supabase
@@ -1341,6 +1499,17 @@
                     displayStories(allStories);
                     updatePagination(page);
                     
+                    // Track stories loaded
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'view_item_list', {
+                            items: allStories.map(story => ({
+                                id: story.id,
+                                name: story.title,
+                                category: story.category
+                            }))
+                        });
+                    }
+                    
                 } catch (error) {
                     console.error('Error loading stories:', error);
                     storiesGrid.innerHTML = `
@@ -1369,7 +1538,7 @@
                         html += `
                             <div class="banner-ad" style="grid-column: 1 / -1;">
                                 <div class="ad-label">Advertisement</div>
-                                <img src="https://via.placeholder.com/300x250/0f3460/e94560?text=ViralXHub+Premium+Content" alt="ViralXHub Premium Content" title="ViralXHub Premium Content">
+                                <img src="https://via.placeholder.com/300x250/0f3460/e94560?text=ViralXHub+Premium+Content" alt="ViralXHub Premium Bengali Stories Collection" title="ViralXHub Premium Content">
                             </div>
                         `;
                     }
@@ -1404,7 +1573,7 @@
                                     <span>${stats.likes.toLocaleString()}</span>
                                 </div>
                             </div>
-                            <button class="read-more-btn" onclick="openStoryDetails(${story.id})">
+                            <button class="read-more-btn" onclick="openStoryDetails(${story.id})" aria-label="Read full story: ${safeTitle}">
                                 Read Full Story
                             </button>
                         </div>
@@ -1454,6 +1623,14 @@
                             if (!isNaN(page)) {
                                 currentStoryPage = page;
                                 loadStories(page);
+                                
+                                // Track pagination in Google Analytics
+                                if (typeof gtag !== 'undefined') {
+                                    gtag('event', 'page_view', {
+                                        page_title: `Bangla Sex Stories - Page ${page}`,
+                                        page_location: `${window.location.href}?page=${page}`
+                                    });
+                                }
                             }
                         });
                     });
@@ -1550,6 +1727,14 @@
                     visitorStoryModal.style.display = 'none';
                     submissionSuccessModal.style.display = 'block';
                     
+                    // Track story submission in Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'submit_story', {
+                            event_category: 'engagement',
+                            event_label: 'story_submission'
+                        });
+                    }
+                    
                     // Reset form
                     document.getElementById('visitor-story-title').value = '';
                     document.getElementById('visitor-story-summary').value = '';
@@ -1578,6 +1763,7 @@
 
             // Initialize the page
             setupSecretAdminArea();
+            setupSearch();
             loadStories(currentStoryPage);
 
             // PWA Installation Prompt
@@ -1604,11 +1790,24 @@
                         });
                 });
             }
+
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Track page load time
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'timing_complete', {
+                        name: 'load',
+                        value: loadTime,
+                        event_category: 'Performance'
+                    });
+                }
+            });
         });
 
         // Global function for opening story details
         function openStoryDetails(storyId) {
-            window.location.href = `story-details.html?id=${storyId}`;
+            window.location.href = `/story-details.html?id=${storyId}`;
         }
 
         // Helper function for date formatting
@@ -1623,9 +1822,10 @@
 
         // Helper function for HTML sanitization
         function sanitizeHTML(str) {
+            if (!str) return '';
             const div = document.createElement('div');
             div.textContent = str;
-            return div.innerHTML;
+            return div.innerHTML.replace(/<[^>]*>/g, '');
         }
     </script>
 </body>
