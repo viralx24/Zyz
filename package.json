@@ -1,0 +1,12 @@
+{
+  "name": "viralx24-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for ViralX24 proxy to Supabase",
+  "main": "netlify/functions/getVideos.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
