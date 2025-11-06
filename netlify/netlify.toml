@@ -1,0 +1,6 @@
+[build]
+  functions = "netlify/functions"
+  publish = "."
+
+# Optional: Add redirect or headers if you want to force correct MIME or CSP
+# Example: to tighten CORS you can set ALLOWED_ORIGIN in Netlify env and remove '*' in function
